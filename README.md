@@ -23,4 +23,7 @@ Guided Questions:
 
 Conclusion, References and Presentation:
 
+References:
+[1] Splunk, "BOTSv3 Dataset," GitHub, 2020. [Online]. Available: https://github.com/splunk/botsv3.
+
 
