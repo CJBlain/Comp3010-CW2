@@ -6,7 +6,10 @@ Link to Video:
 Date: 9th December 2025
 
 
-Introduction: 
+**Introduction:** 
+An SOC (Security Operations Centre), serves asa  central hub for monitoring, detecting, analysing and responding to real time cyber secuity threats. The Botsv3 dataset that has been used in this report allows you to practise these skills. the dataset simualtes a security incident at a fake brewing company called frothy. the datset provides the user with a wide range of logs, these range from emails to to network endpoints. on top of all of that, the BOTSv3 Dataset also includes logs from cloud services such a amazon web services and microsft azure.
+
+The Primary purpose of the investation will be to analyse anolomises related to AWS and answer the set of level 200 questions. 
 
 
 SOC Roles & Incident Handling Reflection:
