@@ -1,4 +1,4 @@
-# Comp3010-CW2
+#### Comp3010-CW2
 
 Connor Blain
 Comp3010 Report and Analysis on BOTSv3 Dataset
@@ -59,10 +59,104 @@ splindex=botsv3 sourcetype="aws:cloudtrail" userIdentity.type="IAMUser"
 bstoll,btun,splunk_access,web_admin
 
 **Significance**
-this provides me with a starting point of all users within the enviroment. this is an essental Tier 2 SOC task. if a new oe often unsed account started to suddenyl access the AWS a lot and acting unusal it coud point towards someones account being comprosed and misused.
+this provides me with a starting point of all users within the enviroment. this is an essental Tier 2 SOC task. if a new and often unused d account started to suddenly access the AWS a lot and acting unusal it coud point towards someones account being comprosed and misused.
 
 
-### **Conclusion and Presentation:**
+
+
+
+
+# **4.2 Field to Detect AWS Actions Without MFA**
+
+**SPL Query**
+splindex=botsv3 sourcetype="aws:cloudtrail" NOT eventName="ConsoleLogin" "mfaAuthenticated"
+| table _time, eventName, userIdentity.sessionContext.attributes.mfaAuthenticated
+
+**Result**
+userIdentity.sessionContext.attributes.mfaAuthenticated
+
+**Significance**
+Multi layered authentication provides an extra layer of security. Using AWS without having MFA on your account is risky because having your password stolen would give the attacker full acccess to your account.  
+
+
+
+
+# **4.3 Processor Used on the Web Servers**
+
+**SPL Query**
+splindex=botsv3 sourcetype=hardware host="gacrux.i-*"
+| stats values(CPU_TYPE) as Processor by host
+| table host, Processor
+
+**Answer**
+E5-2676 
+
+**Significance**
+confiming that the same processor is used across all of the web servers allows the SOC team to ensure that there is not a risk of a security breach due to hardware lagging behind. if a server was differnt it would be flagged here and could indicate that theer has been another sever added to the network without permission 
+
+
+
+# **4.4 Event ID That Made the S3 Bucket Public**
+
+**SPL Query**
+splindex=botsv3 sourcetype="aws:cloudtrail" eventName="PutBucketAcl" "AllUsers"
+| sort _time
+| table _time, eventID, userIdentity.userName
+
+**Answer**
+ab45689d-69cd-41e7-8705-5350402cf7ac
+
+**Significance**
+this is the exact moment that a user made a storage bucket public to anyone on the internet. a storage bucket is like a folder in the clooud where you can store files, images, logs, backups. this alows the SOC team to pinpoint the beginning of an incident and work forwards from there so it is very valuble information to identify.
+
+
+# **4.5 Username That Made the Change**
+
+**SPL Query**
+index=botsv3 sourcetype="aws:cloudtrail" eventName="PutBucketAcl" "AllUsers"
+| sort _time
+| table _time, eventID, userIdentity.userName
+
+**Answer**
+Bstoll
+
+**Significance**
+knowing who made the change allows for the SOC to either talk to that person and provde them with an exaplantion o n the dangers of their actions and possibly futher training if needed or remvoe their access entrly. either way idenfiying uses when they do something bad is a big and important step in an SOC job
+
+
+# **4.6 Name of Identifyed Public Bucket**
+
+**SPL Query**
+index=botsv3 sourcetype="aws:cloudtrail" eventName="PutBucketAcl" "AllUsers"
+| spath input=requestParameters bucketName
+| table bucketName
+
+**Answer**
+frothlywebcode
+
+**Significance**
+once the SOC knows whch bucket was made publically avalible they are able to view the contents of the bucket and idenfty exactly how senstive the data it contains is or not. 
+
+
+
+# **4.7 Text File Uploaded While the Bucket Was Public**
+
+**SPL Query**
+index=botsv3 sourcetype="aws:s3:accesslogs" bucket_name="frothlywebcode" 
+operation="REST.PUT.OBJECT" status=200 *.txt
+| table _time, key, status
+| sort _time
+
+**Answer**
+OPEN_BUCKET_PLEASE_FIX.txt
+
+**Significance**
+within a few minutes someone from outside of the organsation was able to uploaed a file to the bucket. while the file thye uplaoded was just a txt file there was a real poibbility of a person uploading more malicioys software and potentally gaining access.
+
+
+### **Conclusion**
+
+### **AI **
 
 ### **References:**
 [1] Splunk, "BOTSv3 Dataset," GitHub, 2020. [Online]. Available: https://github.com/splunk/botsv3.
