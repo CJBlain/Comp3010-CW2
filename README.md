@@ -1,8 +1,10 @@
 # Comp3010-CW2
 
-Connor Blain
-Comp3010 Report and Analysis on BOTSv3 Dataset
-Link to Video:
+#### Connor Blain
+
+#### Comp3010 Report and Analysis on BOTSv3 Dataset
+
+#### Link to Video:
 
 
 # **Introduction:** 
@@ -221,7 +223,7 @@ During an investigation like the BOTSv3 exercise, generative AI are a solid opti
 AI is also useful for suggesting detection rules. After finding a publc S3 bucket misconfiguration, AI can recommend a ready-to-use Splunk alert to catch similar problems in future. Hpwever, a lot of SOC handle very sentive company data and by allowing the data to be accessed byu the AI you could protenally be comprsing company trade secrets like financial data.
 
 In order to highlight this point of using AI as a tool rather than a replacemnt, i fed relevent parts of the dataset to grok and asked him to expand on parts where my knowledge was lacking. As you can see in the image below, using him to expand on points i was unsure about makes me a better SOC security operator. If i just used it to do all the investigations for me i would never learn anything for myself.
-https://github.com/CJBlain/Comp3010-CW2/blob/main/Screenshot%202026-01-08%20204901.png?raw=true
+
 [Expansion of Knowledge using AI](https://github.com/CJBlain/Comp3010-CW2/blob/main/Screenshot%202026-01-08%20204901.png?raw=true)
 
 # **References:**
