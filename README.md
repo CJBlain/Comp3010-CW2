@@ -108,6 +108,7 @@ ab45689d-69cd-41e7-8705-5350402cf7ac
 
 **Significance**
 this is the exact moment that a user made a storage bucket public to anyone on the internet. a storage bucket is like a folder in the clooud where you can store files, images, logs, backups. this alows the SOC team to pinpoint the beginning of an incident and work forwards from there so it is very valuble information to identify.
+
 [Proof of Investigation](https://github.com/CJBlain/Comp3010-CW2/blob/main/botsv3%20q4.png)
 
 ### **4.5 Username That Made the Change**
@@ -122,6 +123,7 @@ Bstoll
 
 **Significance**
 knowing who made the change allows for the SOC to either talk to that person and provde them with an exaplantion o n the dangers of their actions and possibly futher training if needed or remvoe their access entrly. either way idenfiying uses when they do something bad is a big and important step in an SOC job
+
 [Proof of Investigation](https://github.com/CJBlain/Comp3010-CW2/blob/main/botsv3%20q5.png)
 
 ### **4.6 Name of Identifyed Public Bucket**
@@ -136,6 +138,7 @@ frothlywebcode
 
 **Significance**
 once the SOC knows whch bucket was made publically avalible they are able to view the contents of the bucket and idenfty exactly how senstive the data it contains is or not. 
+
 [Proof of Investigation](https://github.com/CJBlain/Comp3010-CW2/blob/main/botsv3%20q6.png)
 
 
@@ -152,7 +155,7 @@ OPEN_BUCKET_PLEASE_FIX.txt
 
 **Significance**
 within a few minutes someone from outside of the organsation was able to uploaed a file to the bucket. while the file thye uplaoded was just a txt file there was a real poibbility of a person uploading more malicioys software and potentally gaining access.
-[Proof of Investigation]()
+
 
 ### **4.8 Computer Running a Different Windows Version**
 
@@ -167,7 +170,8 @@ BSTOLL-L.froth.ly
 
 **Significance**
 Most company computers run the same version of Windowws. One different version often means it’s a more powerful admin or developer machine. These compters are bigger targets for attackers. The SOC needs to watch them more closely and make sure they have extra protection.
-[PProof of Investigation](https://github.com/CJBlain/Comp3010-CW2/blob/main/botsv3%20q8.png)
+
+[Proof of Investigation](https://github.com/CJBlain/Comp3010-CW2/blob/main/botsv3%20q8.png)
 
 
 # **Conclusion**
