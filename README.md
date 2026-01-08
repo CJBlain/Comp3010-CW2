@@ -3,7 +3,6 @@
 Connor Blain
 Comp3010 Report and Analysis on BOTSv3 Dataset
 Link to Video:
-Date: 9th December 2025
 
 
 **Introduction:** 
@@ -22,6 +21,15 @@ Guest OS: Ubuntu 22.04.5 LTS Desktop (64-bit)
 Resources allocated: 8 vCPUs, 32 GB RAM, 120 GB dynamic disk
 
 The reasons for allocating the amount of disk space and RAM was to ensure perfomance when loading the dataset was not an issue. As well as this, when i was investigating the dataset i ddi not want to have to wait ages everytime i searched. 
+
+Instillation steps were as follows.
+1. VMware VM created with VMware Tools installed for optimal performance.
+2. Ubuntu installed using download from the DLE
+3. Upon Successfull download i made sure to check for any Ubuntu Updates
+4. Splunk Enterprise 9.2.2 installed via official site.
+5. Download of BOTSv3 Dataset from DLE on the VM
+6. BOTSv3 dataset ingested using the official one-shot script from https://github.com/splunk/botsv3.
+7. Validation: index=botsv3 | stats count by sourcetype returned 38 sourcetypes and over 24 million events.
 
 
 
