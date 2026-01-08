@@ -24,7 +24,7 @@ The reasons for allocating the amount of disk space and RAM was to ensure perfom
 
 Instillation steps were as follows.
 1. VMware VM created with VMware Tools installed for optimal performance.
-2. Ubuntu installed using download from the DLE
+2. Ubuntu installed using download from the DLE https://github.com/CJBlain/Comp3010-CW2/blob/main/Screenshot%202025-12-04%20150243.png
 3. Upon Successfull download i made sure to check for any Ubuntu Updates
 4. Splunk Enterprise 9.2.2 installed via official site.
 5. Download of BOTSv3 Dataset from DLE on the VM
