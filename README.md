@@ -199,8 +199,29 @@ Most company computers run the same version of Windowws. One different version o
 
 
 # **Conclusion**
+the investigation inside this report showed how a small mistake in the cloud can quickly turn into a real security problem. An employee (bstoll) accidentally changed the settings on an AWS S3 bucket called frothlywebcode, making it open to anyone on the internet. Within minutes, someone from outside uploaded a file to prove the bucket was exposed. had this been a malicaious file rather than just a plain txt file the sition coul #d have turned very nasty. While the main focus of the investiagion centres around this exposed bucuket, the analysis also highlihted other important details, such as which user accounts were active in AWS, actions taken without multi-factor authentication, consistent hardware on web servers, and one computer running a different version of Windows.
+The incident demostrates  why good logging is essential. Without AWS CloudTrail and S3 access logs (which show who accessed the bucket), the SOC would have had no idea this happened.
 
-# **AI**
+# **What I have learned from this coursework:**
+
+1. Cloud logs are just as important as computer logs. The amount fo data that passess through the cloud makes it a valuable access point for people will bad intentions 
+3. Simple mistakes (like making a storage bucket public) can have big consequences. this also highlights jsut how important being able to trace every action within your server is.
+2. Knowing the normal hardware helps spot issues quickly. By checking the processor versions as seen in q3. the SOC was able to dertime if any other actors had gained access and added thier own server.
+3. Clear evidence and attribution make response easier. Being able to say exactly who did what and when allows for imedate correction of proo practses or limitng access.
+4. Splunk is a powerful tool for joining up different logs and finding the story behind an incident.
+
+Overall, this exercise gave me a practical understanding of how a real SOC analyst works: spotting problems through logs, rebulding what happened, and suggesting ways to make the environment safer. It also showed the value of careful setup  and clear documenation with screenshots and queries.
+
+# **AI as a tool in an SOC Investigation**
+Artificial Intelligence is becoming an important assisstant in SOC's, working best as a partner to human analysts rather than a replacement. In a typical investigation, AI can quickly handle large amounts of data that would take people much longer to review.
+For example, AI-powered tools in Splunk can automatically group similar alerts, spot unusual patterns in user behaviour, or highlight the most serious events from thousands of daily logs. Machine learning models can learn what “normal” looks like for a company’s network and flag anything that doesn’t fit
+However, if you were only to rely soley on AI you would be exposing your server and your company to great risk. AI lacks the human element and often will due view secuity elements as black and white. a much better option is for humans to ay on AI to streamline ther own knowlege rather than an outright replacement for what they dont know. 
+
+During an investigation like the BOTSv3 exercise, generative AI are a solid option to analysts by doing tasks such as suggesting or improving Splunk queries, explaining unfamiliar log fields, summarising long event descriptions, or drafting clear report sections. This saves time and helps less experienced analysts work faster and more confidently.
+AI is also useful for suggesting detection rules. After finding a publc S3 bucket misconfiguration, AI can recommend a ready-to-use Splunk alert to catch similar problems in future. Hpwever, a lot of SOC handle very sentive company data and by allowing the data to be accessed byu the AI you could protenally be comprsing company trade secrets like financial data.
+
+In order to highlight this point of using AI as a tool rather than a replacemnt, i fed relevent parts of the dataset to grok and asked him to expand on parts where my knowlege was lacking. as you can see in the image below, using him to expand on points i am unsure about makes me a better SOC security operator. If i just used him to do it for me i would never learn anything for myself.
+
 
 # **References:**
 [1] Splunk, "BOTSv3 Dataset," GitHub, 2020. [Online]. Available: https://github.com/splunk/botsv3.
