@@ -75,6 +75,7 @@ splindex=botsv3 sourcetype="aws:cloudtrail" NOT eventName="ConsoleLogin" "mfaAut
 | table _time, eventName, userIdentity.sessionContext.attributes.mfaAuthenticated
 
 **Result**
+
 userIdentity.sessionContext.attributes.mfaAuthenticated
 
 **Significance**
@@ -91,7 +92,8 @@ splindex=botsv3 sourcetype=hardware host="gacrux.i-*"
 | stats values(CPU_TYPE) as Processor by host
 | table host, Processor
 
-**Answer**
+**Result**
+
 E5-2676 
 
 **Significance**
@@ -104,7 +106,8 @@ splindex=botsv3 sourcetype="aws:cloudtrail" eventName="PutBucketAcl" "AllUsers"
 | sort _time
 | table _time, eventID, userIdentity.userName
 
-**Answer**
+**Result**
+
 ab45689d-69cd-41e7-8705-5350402cf7ac
 
 **Significance**
@@ -119,7 +122,8 @@ index=botsv3 sourcetype="aws:cloudtrail" eventName="PutBucketAcl" "AllUsers"
 | sort _time
 | table _time, eventID, userIdentity.userName
 
-**Answer**
+**Result**
+
 Bstoll
 
 **Significance**
@@ -134,7 +138,8 @@ index=botsv3 sourcetype="aws:cloudtrail" eventName="PutBucketAcl" "AllUsers"
 | spath input=requestParameters bucketName
 | table bucketName
 
-**Answer**
+**Result**
+
 frothlywebcode
 
 **Significance**
@@ -151,7 +156,8 @@ operation="REST.PUT.OBJECT" status=200 *.txt
 | table _time, key, status
 | sort _time
 
-**Answer**
+**Result**
+
 OPEN_BUCKET_PLEASE_FIX.txt
 
 **Significance**
@@ -166,7 +172,8 @@ index=botsv3 sourcetype=winhostmon
 | where OS != "Microsoft Windows 10 Pro"
 | table host, OS
 
-**Answer**
+**Result**
+
 BSTOLL-L.froth.ly
 
 **Significance**
