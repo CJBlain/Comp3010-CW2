@@ -12,19 +12,25 @@ An SOC (Security Operations Centre), serves as a central hub for monitoring, det
 The Primary purpose of the investation will be to analyse anolomises related to AWS and answer the set of level 200 questions. 
 
 
-SOC Roles & Incident Handling Reflection:
+**SOC Roles & Incident Handling Reflection:**
 
 
-Installation & Data Preparation:
+**Installation & Data Preparation:**
+The envirmmoment to complete this exercise was swtup to closely miror real world SOC lab infrastructure. 
+Host: VMware Workstation Pro 17 on Windows 11 host
+Guest OS: Ubuntu 22.04.5 LTS Desktop (64-bit)
+Resources allocated: 8 vCPUs, 32 GB RAM, 120 GB dynamic disk
+
+The reasons for allocating the amount of disk space and RAM was to ensure perfomance when loading the dataset was not an issue. As well as this, when i was investigating the dataset i ddi not want to have to wait ages everytime i searched. 
 
 
 
-Guided Questions:
+**Guided Questions:**
 
 
-Conclusion and Presentation:
+**Conclusion and Presentation:**
 
-References:
+**References:**
 [1] Splunk, "BOTSv3 Dataset," GitHub, 2020. [Online]. Available: https://github.com/splunk/botsv3.
 
 
