@@ -10,8 +10,19 @@ An SOC (Security Operations Centre), serves as a central hub for monitoring, det
 
 The Primary purpose of the investation will be to analyse anolomises related to AWS and answer the set of level 200 questions. 
 
+Assumptions made:
+All logs in BOTSv3 are trusted and correctly timestamped.
+The investigation is retrospective (post-incident analysis).
+
+
 
 **SOC Roles & Incident Handling Reflection:**
+in real life, a security operations centre uses 3 tiers to handle secuity incidents. These are as follows:
+Tier 1 (Alert Triage) defined as initial alert review and validation.
+Tier 2 (Incident Analysis) defined as deep investigation, correlation, and root cause analysis.
+Tier 3 (Threat Hunting & Engineering) defiend as advanced analysis, detection engineering, and remediation.
+
+The BOTSv3 exercise mostly focuses around the responsabilities of the second tier. This means that it requires log analysis, following evidence to form conclusions and linking data together to form corralations.
 
 
 **Installation & Data Preparation:**
