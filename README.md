@@ -11,8 +11,8 @@ An SOC (Security Operations Centre), serves as a central hub for monitoring, det
 The Primary purpose of the investation will be to analyse anolomises related to AWS and answer the set of level 200 questions. 
 
 ### Assumptions made:
-All logs in BOTSv3 are trusted and correctly timestamped.
-The investigation is retrospective (post-incident analysis).
++ All logs in BOTSv3 are trusted and correctly timestamped.
++ The investigation is retrospective (post-incident analysis).
 
 
 
@@ -56,6 +56,7 @@ splindex=botsv3 sourcetype="aws:cloudtrail" userIdentity.type="IAMUser"
 | table IAM_Users
 
 **Result**
+
 bstoll,btun,splunk_access,web_admin
 
 **Significance**
