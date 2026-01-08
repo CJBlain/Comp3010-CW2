@@ -27,9 +27,9 @@ The BOTSv3 exercise mostly focuses around the responsabilities of the second tie
 
 # **Installation & Data Preparation:**
 The envirmmoment to complete this exercise was swtup to closely miror real world SOC lab infrastructure. 
-Host: VMware Workstation Pro 17 on Windows 11 host
-Guest OS: Ubuntu 22.04.5 LTS Desktop (64-bit)
-Resources allocated: 8 vCPUs, 32 GB RAM, 120 GB dynamic disk
+**Host:** VMware Workstation Pro 17 on Windows 11 host
+**Guest OS:** Ubuntu 22.04.5 LTS Desktop (64-bit)
+**Resources allocated:** 8 vCPUs, 32 GB RAM, 120 GB dynamic disk
 
 The reasons for allocating the amount of disk space and RAM was to ensure perfomance when loading the dataset was not an issue. As well as this, when i was investigating the dataset i did not want to have to wait ages everytime i searched. 
 
@@ -153,10 +153,23 @@ OPEN_BUCKET_PLEASE_FIX.txt
 **Significance**
 within a few minutes someone from outside of the organsation was able to uploaed a file to the bucket. while the file thye uplaoded was just a txt file there was a real poibbility of a person uploading more malicioys software and potentally gaining access.
 
+### **4.8 Computer Running a Different Windows Version**
+
+**SPL Query**
+index=botsv3 sourcetype=winhostmon
+| stats values(OS) as OS by host
+| where OS != "Microsoft Windows 10 Pro"
+| table host, OS
+
+**Answer**
+BSTOLL-L.froth.ly
+
+**Significance**
+Most company computers run the same version of Windowws. One different version often means it’s a more powerful admin or developer machine. These compters are bigger targets for attackers. The SOC needs to watch them more closely and make sure they have extra protection.
 
 # **Conclusion**
 
-# **AI **
+# **AI**
 
 # **References:**
 [1] Splunk, "BOTSv3 Dataset," GitHub, 2020. [Online]. Available: https://github.com/splunk/botsv3.
