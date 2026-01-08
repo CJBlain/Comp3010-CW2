@@ -26,7 +26,7 @@ Instillation steps were as follows.
 1. VMware VM created with VMware Tools installed for optimal performance.
 2. Ubuntu installed using download from the DLE [proof](https://github.com/CJBlain/Comp3010-CW2/blob/main/Screenshot%202025-12-04%20150243.png)
 3. Upon Successfull download i made sure to check for any Ubuntu Updates
-4. Splunk Enterprise 9.2.2 installed via official site.
+4. Splunk Enterprise 9.2.2 installed via official site. [proof]()
 5. Download of BOTSv3 Dataset from DLE on the VM
 6. BOTSv3 dataset ingested using the official one-shot script from https://github.com/splunk/botsv3.
 7. Validation: index=botsv3 | stats count by sourcetype returned 38 sourcetypes and over 24 million events.
