@@ -39,8 +39,8 @@ The reasons for allocating the amount of disk space and RAM was to ensure perfom
 3. Upon Successfull download i made sure to check for any Ubuntu Updates
 4. Splunk Enterprise 9.2.2 installed via official site. [Proof of Splunk Liscense](https://github.com/CJBlain/Comp3010-CW2/blob/main/Screenshot%202025-12-06%20131916.png)
 5. Download of BOTSv3 Dataset from DLE on the VM
-6. BOTSv3 dataset ingested using the official one-shot script from https://github.com/splunk/botsv3. 
-7. Validation: index=botsv3 | stats count by sourcetype returned 38 sourcetypes and over 24 million events.
+6. BOTSv3 dataset ingested using the official one-shot script from https://github.com/splunk/botsv3. [Proof of Ingestion](https://github.com/CJBlain/Comp3010-CW2/blob/main/proof%20of%20botsv3%20ingestion%20picture%201.png)
+7. Validation: index=botsv3 | stats count by sourcetype returned 38 sourcetypes and over 24 million events. [Proof of Ingestion Result](https://github.com/CJBlain/Comp3010-CW2/blob/main/proof%20of%20botsv3%20ingestion%20picture%202.png)
 
 
 # **Findings of the Investigation**
