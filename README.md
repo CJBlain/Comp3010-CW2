@@ -6,7 +6,7 @@ Link to Video:
 
 
 **Introduction:** 
-An SOC (Security Operations Centre), serves as a central hub for monitoring, detecting, analysing and responding to real time cyber secuity threats. The Botsv3 dataset that has been used in this report allows you to practise these skills. The dataset simualtes a security incident at a fake brewing company called frothy. The datset provides the user with a wide range of logs, these range from emails to to network endpoints. on top of all of that, the BOTSv3 Dataset also includes logs from cloud services such a amazon web services and microsft azure.
+An SOC (Security Operations Centre), serves as a central hub for monitoring, detecting, analysing and responding to real time cyber security threats. The Botsv3 dataset that has been used in this report allows you to practise these skills. The dataset simualtes a security incident at a fake brewing company called frothy. The datset provides the user with a wide range of logs, these range from emails to to network endpoints. on top of all of that, the BOTSv3 Dataset also includes logs from cloud services such a amazon web services and microsft azure.
 
 The Primary purpose of the investation will be to analyse anolomises related to AWS and answer the set of level 200 questions. 
 
@@ -31,7 +31,7 @@ Host: VMware Workstation Pro 17 on Windows 11 host
 Guest OS: Ubuntu 22.04.5 LTS Desktop (64-bit)
 Resources allocated: 8 vCPUs, 32 GB RAM, 120 GB dynamic disk
 
-The reasons for allocating the amount of disk space and RAM was to ensure perfomance when loading the dataset was not an issue. As well as this, when i was investigating the dataset i ddi not want to have to wait ages everytime i searched. 
+The reasons for allocating the amount of disk space and RAM was to ensure perfomance when loading the dataset was not an issue. As well as this, when i was investigating the dataset i did not want to have to wait ages everytime i searched. 
 
 Instillation steps were as follows.
 1. VMware VM created with VMware Tools installed for optimal performance.
@@ -43,8 +43,8 @@ Instillation steps were as follows.
 7. Validation: index=botsv3 | stats count by sourcetype returned 38 sourcetypes and over 24 million events.
 
 
-
-**Guided Questions:**
+**Findings of the Investigation**
+all searches make use of index=botsv3 earliest=0 in order to ensure i am looking through not only the correct dataset but also the full version of it.
 
 
 **Conclusion and Presentation:**
